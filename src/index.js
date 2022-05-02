@@ -7,7 +7,12 @@
  * @param {number} maxSecond
  * @returns {number}
  */
-export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {};
+export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
+    let minimal = Math.min(minFirst, minSecond);
+    let maximum = Math.max(maxFirst,maxSecond);
+    let mult = minimal * maximum;
+    return mult;
+};
 
 /**
  * Функция принимает один числовой аргумент, это радиус круга. Функция должна
@@ -16,7 +21,10 @@ export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {};
  * @param {number} radius
  * @returns {number}
  */
-export const getSquareOfCircle = (radius) => {};
+export const getSquareOfCircle = (radius) => {
+    let circRad = Math.PI * Math.pow(radius, 2);
+    return circRad;
+};
 
 /**
  * Функция принимает число и точность к которой нужно округлить
@@ -26,7 +34,10 @@ export const getSquareOfCircle = (radius) => {};
  * @param {number} accuracy
  * @returns {number}
  */
-export const getFixedValue = (number, accuracy) => {};
+export const getFixedValue = (number, accuracy) => {
+    let fixedNum = Number(number.toFixed(accuracy));
+    return fixedNum;
+};
 
 /**
  * Если целая часть числа четная, то срабатывает Math.floor для этого числа
@@ -34,7 +45,17 @@ export const getFixedValue = (number, accuracy) => {};
  * @param {number} number
  * @returns {number}
  */
-export const getFlooroCeil = (number) => {};
+export const getFlooroCeil = (number) => {
+    let roundedNum = Math.round(number);
+    if( roundedNum % 2 === 0){
+        let florOrCeilOne = Math.floor(number);
+        return florOrCeilOne;
+    }
+    else if (roundedNum % 2 !== 0) {
+        let florOrCeilTwo = Math.ceil(number);
+        return florOrCeilTwo;
+    }
+};
 
 /**
  * Мы передаем два числа, от какого и до какого числа и функция должна
@@ -44,4 +65,7 @@ export const getFlooroCeil = (number) => {};
  * @param {number} to
  * @returns {number}
  */
-export const randomizer = (from, to) => {};
+export const randomizer = (from, to) => {
+    let randomNum = from -0.5 + Math.random() * (to - from + 1);
+    return  Math.round(randomNum);
+};
